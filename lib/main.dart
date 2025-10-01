@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       minTextAdapt: true,
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: "Github Flutter Repo",
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
