@@ -123,7 +123,7 @@ class DatabaseHelper {
     });
   }
 
-  static Future<List> getRepositories() async {
+  static Future<List<Repository>> getRepositories() async {
     final db = await database;
     final List<Map> result = await db.rawQuery('''
       SELECT 

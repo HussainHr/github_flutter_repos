@@ -1,12 +1,13 @@
 import 'package:github_flutter_repos/core/database/database_helper.dart';
 import 'package:github_flutter_repos/data/datasources/github_api_service.dart';
+import 'package:github_flutter_repos/domain/models/repository_model.dart';
 
 class RepositoryRepository {
   final GitHubApiService _apiService;
 
   RepositoryRepository(this._apiService);
 
-  Future<List> getRepositories({bool forceRefresh = false}) async {
+  Future<List<Repository>> getRepositories({bool forceRefresh = false}) async {
     if (forceRefresh) {
       try {
         final repositories = await _apiService.searchFlutterRepositories();
