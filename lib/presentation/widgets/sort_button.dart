@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
+import 'package:github_flutter_repos/core/utils/app_spacing.dart';
 import 'package:github_flutter_repos/domain/models/sort_option.dart';
 import 'package:github_flutter_repos/presentation/providers/providers.dart';
 
@@ -35,7 +36,7 @@ class CustomShortButton extends ConsumerWidget {
                     ? Theme.of(context).colorScheme.primary
                     : Theme.of(context).colorScheme.onSurfaceVariant,
               ),
-              const SizedBox(width: 12),
+              horizontalSpacing(12),
               Expanded(
                 child: Text(
                   option.displayName,
@@ -48,7 +49,7 @@ class CustomShortButton extends ConsumerWidget {
                 ),
               ),
               if (isSelected) ...[
-                const SizedBox(width: 8),
+                horizontalSpacing(8),
                 Icon(
                   sortState.isAscending
                       ? Icons.arrow_upward

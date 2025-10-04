@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
+import 'package:github_flutter_repos/core/utils/app_spacing.dart';
 import 'package:github_flutter_repos/domain/models/repository_model.dart';
 
 class RepositoryListItem extends StatelessWidget {
@@ -26,13 +27,13 @@ class RepositoryListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildHeader(context),
-              const SizedBox(height: 12),
+              verticalSpacing(12),
               _buildTitle(context),
               if (repository.description != null && repository.description!.isNotEmpty) ...[
-                const SizedBox(height: 8),
+                verticalSpacing(8),
                 _buildDescription(context),
               ],
-              const SizedBox(height: 12),
+              verticalSpacing(12),
               _buildFooter(context),
             ],
           ),
@@ -57,7 +58,7 @@ class RepositoryListItem extends StatelessWidget {
           )
               : null,
         ),
-        const SizedBox(width: 8),
+        horizontalSpacing(8),
         Expanded(
           child: Text(
             repository.owner.login,
@@ -147,7 +148,7 @@ class RepositoryListItem extends StatelessWidget {
             size: 14,
             color: color,
           ),
-          const SizedBox(width: 4),
+          horizontalSpacing(4),
           Text(
             count,
             style: TextStyle(

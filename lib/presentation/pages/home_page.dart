@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
+import 'package:github_flutter_repos/core/utils/app_spacing.dart';
 import 'package:github_flutter_repos/domain/models/repository_model.dart';
 import 'package:github_flutter_repos/presentation/pages/repository_detail_page.dart';
 import 'package:github_flutter_repos/presentation/providers/providers.dart';
@@ -27,18 +28,15 @@ class HomePage extends ConsumerWidget {
         actions: [
           CustomShortButton(
             onSortChanged: (sortOption) {
-              ref.read(sortNotifierProvider.notifier)
-                  .changeSortOption(sortOption);
+              ref.read(sortNotifierProvider.notifier).changeSortOption(sortOption);
 
               // Update repository state with newly sorted repositories
-              final newSortedRepos = ref.read(sortNotifierProvider.notifier)
-                  .sortRepositories(repositoryState.repositories);
-              ref.read(repositoryNotifierProvider.notifier)
-                  .sortRepositories(newSortedRepos);
+              final newSortedRepos = ref.read(sortNotifierProvider.notifier).sortRepositories(repositoryState.repositories);
+              ref.read(repositoryNotifierProvider.notifier).sortRepositories(newSortedRepos);
             },
           ),
           const ThemeToggleButton(),
-          const SizedBox(width: 8),
+          horizontalSpacing(8),
         ],
       ),
       body: _buildBody(context, ref, repositoryState, sortedRepositories),
@@ -74,18 +72,18 @@ class HomePage extends ConsumerWidget {
                 size: 64,
                 color: Theme.of(context).colorScheme.error,
               ),
-              const SizedBox(height: 16),
+              verticalSpacing(16),
               Text(
                 HardCodedData.error,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
-              const SizedBox(height: 8),
+              verticalSpacing(8),
               Text(
                 state.error!,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
-              const SizedBox(height: 16),
+              verticalSpacing(16),
               ElevatedButton(
                 onPressed: () => ref.read(repositoryNotifierProvider.notifier).refreshRepositories(),
                 child: const Text(HardCodedData.retry),
@@ -106,7 +104,7 @@ class HomePage extends ConsumerWidget {
               size: 64,
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
-            const SizedBox(height: 16),
+            verticalSpacing(16),
             Text(
               HardCodedData.noRepoFound,
               style: Theme.of(context).textTheme.headlineSmall,

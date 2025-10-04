@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
+import 'package:github_flutter_repos/core/utils/app_spacing.dart';
 import 'package:github_flutter_repos/domain/models/repository_model.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -38,11 +39,11 @@ class RepositoryDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildOwnerSection(context),
-            const SizedBox(height: 24),
+            verticalSpacing(24),
             _buildRepositoryInfoSection(context),
-            const SizedBox(height: 24),
+            verticalSpacing(24),
             _buildStatsSection(context),
-            const SizedBox(height: 24),
+            verticalSpacing(24),
             _buildDescriptionSection(context),
           ],
         ),
@@ -69,7 +70,7 @@ class RepositoryDetailPage extends StatelessWidget {
               )
                   : null,
             ),
-            const SizedBox(width: 16),
+            horizontalSpacing(16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +79,7 @@ class RepositoryDetailPage extends StatelessWidget {
                     repository.owner.login,
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
-                  const SizedBox(height: 4),
+                  verticalSpacing(4),
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 8,
@@ -117,28 +118,28 @@ class RepositoryDetailPage extends StatelessWidget {
               HardCodedData.repositoryInformation,
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const SizedBox(height: 16),
+            verticalSpacing(16),
             _buildInfoRow(
               context,
               HardCodedData.fullName,
               repository.fullName,
               Icons.folder_outlined,
             ),
-            const SizedBox(height: 12),
+            verticalSpacing(12),
             _buildInfoRow(
               context,
               HardCodedData.language,
               repository.language.isNotEmpty ? repository.language : HardCodedData.notSpecified,
               Icons.code,
             ),
-            const SizedBox(height: 12),
+            verticalSpacing(12),
             _buildInfoRow(
               context,
               HardCodedData.defaultBranch,
               repository.defaultBranch,
               Icons.merge_type,
             ),
-            const SizedBox(height: 12),
+            verticalSpacing(12),
             _buildInfoRow(
               context,
               HardCodedData.lastUpdated,
@@ -146,7 +147,7 @@ class RepositoryDetailPage extends StatelessWidget {
               Icons.update,
             ),
             if (repository.pushedAt != null) ...[
-              const SizedBox(height: 12),
+              verticalSpacing(12),
               _buildInfoRow(
                 context,
                 HardCodedData.lastPush,
@@ -154,7 +155,7 @@ class RepositoryDetailPage extends StatelessWidget {
                 Icons.publish,
               ),
             ],
-            const SizedBox(height: 12),
+            verticalSpacing(12),
             _buildInfoRow(
               context,
               HardCodedData.created,
@@ -178,7 +179,7 @@ class RepositoryDetailPage extends StatelessWidget {
               HardCodedData.statistics,
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const SizedBox(height: 16),
+            verticalSpacing(16),
             Row(
               children: [
                 Expanded(
@@ -190,7 +191,7 @@ class RepositoryDetailPage extends StatelessWidget {
                     Colors.amber,
                   ),
                 ),
-                const SizedBox(width: 8),
+                horizontalSpacing(8),
                 Expanded(
                   child: _buildStatCard(
                     context,
@@ -202,7 +203,7 @@ class RepositoryDetailPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            verticalSpacing(8),
             Row(
               children: [
                 Expanded(
@@ -214,7 +215,7 @@ class RepositoryDetailPage extends StatelessWidget {
                     Colors.green,
                   ),
                 ),
-                const SizedBox(width: 8),
+                horizontalSpacing(8),
                 Expanded(
                   child: _buildStatCard(
                     context,
@@ -247,7 +248,7 @@ class RepositoryDetailPage extends StatelessWidget {
               HardCodedData.description,
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const SizedBox(height: 16),
+            verticalSpacing(16),
             Text(
               repository.description!,
               style: Theme.of(context).textTheme.bodyLarge,
@@ -272,7 +273,7 @@ class RepositoryDetailPage extends StatelessWidget {
           size: 20,
           color: Theme.of(context).colorScheme.primary,
         ),
-        const SizedBox(width: 12),
+        horizontalSpacing(16),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -318,7 +319,7 @@ class RepositoryDetailPage extends StatelessWidget {
             color: color,
             size: 24,
           ),
-          const SizedBox(height: 8),
+          verticalSpacing(8),
           Text(
             value,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
