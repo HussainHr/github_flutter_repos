@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/legacy.dart';
+import 'package:github_flutter_repos/core/constants/app_constants.dart';
+import 'package:github_flutter_repos/domain/models/repository_model.dart';
+import 'package:github_flutter_repos/domain/models/sort_option.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../core/constants/app_constants.dart';
-import '../../domain/models/sort_option.dart';
-import '../../domain/models/repository_model.dart';
 
 @immutable
 class SortState {

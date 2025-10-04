@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
-import '../../data/datasources/github_api_service.dart';
-import '../../data/repositories/repository_repository.dart';
+import 'package:github_flutter_repos/data/datasources/github_api_service.dart';
+import 'package:github_flutter_repos/data/repositories/repository_repository.dart';
 import 'repository_notifier.dart';
 import 'theme_notifier.dart';
 import 'sort_notifier.dart';

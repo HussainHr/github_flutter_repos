@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
+import 'package:github_flutter_repos/domain/models/repository_model.dart';
+import 'package:github_flutter_repos/presentation/pages/repository_detail_page.dart';
+import 'package:github_flutter_repos/presentation/providers/providers.dart';
 import 'package:github_flutter_repos/presentation/providers/repository_notifier.dart';
-import '../providers/providers.dart';
-import '../widgets/repository_list_item.dart';
-import '../widgets/sort_button.dart';
-import '../widgets/theme_toggle_button.dart';
-import 'repository_detail_page.dart';
-import '../../domain/models/repository_model.dart';
+import 'package:github_flutter_repos/presentation/widgets/repository_list_item.dart';
+import 'package:github_flutter_repos/presentation/widgets/sort_button.dart';
+import 'package:github_flutter_repos/presentation/widgets/theme_toggle_button.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -22,9 +23,9 @@ class HomePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Repositories'),
+        title: Text(HardCodedData.flutterRepository),
         actions: [
-          SortButton(
+          CustomShortButton(
             onSortChanged: (sortOption) {
               ref.read(sortNotifierProvider.notifier)
                   .changeSortOption(sortOption);
@@ -43,7 +44,7 @@ class HomePage extends ConsumerWidget {
       body: _buildBody(context, ref, repositoryState, sortedRepositories),
       floatingActionButton: FloatingActionButton(
         onPressed: () => ref.read(repositoryNotifierProvider.notifier).refreshRepositories(),
-        tooltip: 'Refresh',
+        tooltip: HardCodedData.refresh,
         child: const Icon(Icons.refresh),
       ),
     );
@@ -75,7 +76,7 @@ class HomePage extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                'Error',
+                HardCodedData.error,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               const SizedBox(height: 8),
@@ -87,7 +88,7 @@ class HomePage extends ConsumerWidget {
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () => ref.read(repositoryNotifierProvider.notifier).refreshRepositories(),
-                child: const Text('Retry'),
+                child: const Text(HardCodedData.retry),
               ),
             ],
           ),
@@ -107,7 +108,7 @@ class HomePage extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'No repositories found',
+              HardCodedData.noRepoFound,
               style: Theme.of(context).textTheme.headlineSmall,
             ),
           ],

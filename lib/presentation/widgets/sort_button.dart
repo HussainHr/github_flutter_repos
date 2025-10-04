@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/providers.dart';
-import '../../domain/models/sort_option.dart';
+import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
+import 'package:github_flutter_repos/domain/models/sort_option.dart';
+import 'package:github_flutter_repos/presentation/providers/providers.dart';
 
-class SortButton extends ConsumerWidget {
+class CustomShortButton extends ConsumerWidget {
   final Function(SortOption) onSortChanged;
 
-  const SortButton({
+  const CustomShortButton({
     super.key,
     required this.onSortChanged,
   });
@@ -19,7 +20,7 @@ class SortButton extends ConsumerWidget {
       icon: Icon(
         sortState.isAscending ? Icons.arrow_upward : Icons.arrow_downward,
       ),
-      tooltip: 'Sort repositories',
+      tooltip: HardCodedData.sortRepository,
       onSelected: onSortChanged,
       itemBuilder: (context) => SortOption.values.map((option) {
         final isSelected = sortState.currentSort == option;

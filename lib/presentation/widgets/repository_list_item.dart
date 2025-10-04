@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
 import 'package:github_flutter_repos/domain/models/repository_model.dart';
 
 class RepositoryListItem extends StatelessWidget {
@@ -117,7 +118,7 @@ class RepositoryListItem extends StatelessWidget {
         if (repository.language.isNotEmpty)
           _buildLanguageChip(context),
         Text(
-          'Updated ${_getRelativeTime(repository.updatedAt)}',
+          '${HardCodedData.updated} ${_getRelativeTime(repository.updatedAt)}',
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
             color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),

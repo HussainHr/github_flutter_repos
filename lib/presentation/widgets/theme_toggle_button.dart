@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
 import 'package:github_flutter_repos/presentation/providers/providers.dart';
 
 class ThemeToggleButton extends ConsumerWidget {
@@ -13,7 +14,7 @@ class ThemeToggleButton extends ConsumerWidget {
       icon: Icon(
         isDarkTheme ? Icons.light_mode : Icons.dark_mode,
       ),
-      tooltip: isDarkTheme ? 'Switch to Light Mode' : 'Switch to Dark Mode',
+      tooltip: isDarkTheme ? HardCodedData.switchToLightMode : HardCodedData.switchToDarkMode,
       onPressed: () {
         ref.read(themeNotifierProvider.notifier).toggleTheme();
       },

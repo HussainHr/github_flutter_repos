@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
 import 'package:github_flutter_repos/domain/models/repository_model.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -19,11 +20,11 @@ class RepositoryDetailPage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.open_in_new),
-            tooltip: 'Open in GitHub',
+            tooltip: HardCodedData.openGithub,
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('URL: ${repository.htmlUrl}'),
+                  content: Text('${HardCodedData.openGithub}: ${repository.htmlUrl}'),
                   duration: const Duration(seconds: 3),
                 ),
               );
@@ -113,34 +114,34 @@ class RepositoryDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Repository Information',
+              HardCodedData.repositoryInformation,
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 16),
             _buildInfoRow(
               context,
-              'Full Name',
+              HardCodedData.fullName,
               repository.fullName,
               Icons.folder_outlined,
             ),
             const SizedBox(height: 12),
             _buildInfoRow(
               context,
-              'Language',
-              repository.language.isNotEmpty ? repository.language : 'Not specified',
+              HardCodedData.language,
+              repository.language.isNotEmpty ? repository.language : HardCodedData.notSpecified,
               Icons.code,
             ),
             const SizedBox(height: 12),
             _buildInfoRow(
               context,
-              'Default Branch',
+              HardCodedData.defaultBranch,
               repository.defaultBranch,
               Icons.merge_type,
             ),
             const SizedBox(height: 12),
             _buildInfoRow(
               context,
-              'Last Updated',
+              HardCodedData.lastUpdated,
               DateFormat('MM-dd-yyyy HH:mm').format(repository.updatedAt),
               Icons.update,
             ),
@@ -148,7 +149,7 @@ class RepositoryDetailPage extends StatelessWidget {
               const SizedBox(height: 12),
               _buildInfoRow(
                 context,
-                'Last Push',
+                HardCodedData.lastPush,
                 DateFormat('MM-dd-yyyy HH:mm').format(repository.pushedAt!),
                 Icons.publish,
               ),
@@ -156,7 +157,7 @@ class RepositoryDetailPage extends StatelessWidget {
             const SizedBox(height: 12),
             _buildInfoRow(
               context,
-              'Created',
+              HardCodedData.created,
               DateFormat('MM-dd-yyyy HH:mm').format(repository.createdAt),
               Icons.calendar_today,
             ),
@@ -174,7 +175,7 @@ class RepositoryDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Statistics',
+              HardCodedData.statistics,
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 16),
@@ -183,7 +184,7 @@ class RepositoryDetailPage extends StatelessWidget {
                 Expanded(
                   child: _buildStatCard(
                     context,
-                    'Stars',
+                    HardCodedData.stars,
                     _formatNumber(repository.stargazersCount),
                     Icons.star,
                     Colors.amber,
@@ -193,7 +194,7 @@ class RepositoryDetailPage extends StatelessWidget {
                 Expanded(
                   child: _buildStatCard(
                     context,
-                    'Forks',
+                    HardCodedData.forks,
                     _formatNumber(repository.forksCount),
                     Icons.fork_right,
                     Colors.blue,
@@ -207,7 +208,7 @@ class RepositoryDetailPage extends StatelessWidget {
                 Expanded(
                   child: _buildStatCard(
                     context,
-                    'Watchers',
+                    HardCodedData.watchers,
                     _formatNumber(repository.watchersCount),
                     Icons.visibility,
                     Colors.green,
@@ -217,7 +218,7 @@ class RepositoryDetailPage extends StatelessWidget {
                 Expanded(
                   child: _buildStatCard(
                     context,
-                    'Issues',
+                    HardCodedData.issues,
                     _formatNumber(repository.openIssuesCount),
                     Icons.bug_report,
                     Colors.red,
@@ -243,7 +244,7 @@ class RepositoryDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Description',
+              HardCodedData.description,
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 16),

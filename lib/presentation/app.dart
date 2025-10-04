@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:github_flutter_repos/core/constants/hard_coded_data.dart';
 import 'providers/providers.dart';
 import 'themes/app_themes.dart';
 import 'pages/home_page.dart';
@@ -12,7 +13,7 @@ class MyApp extends ConsumerWidget {
     final isDarkTheme = ref.watch(themeNotifierProvider);
 
     return MaterialApp(
-      title: 'GitHub Flutter Repos',
+      title: HardCodedData.appTitle,
       debugShowCheckedModeBanner: false,
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
