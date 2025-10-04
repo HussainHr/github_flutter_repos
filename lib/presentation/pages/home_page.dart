@@ -39,7 +39,7 @@ class HomePage extends ConsumerWidget {
           horizontalSpacing(8),
         ],
       ),
-      body: _buildBody(context, ref, repositoryState, sortedRepositories),
+      body: _homePageBody(context, ref, repositoryState, sortedRepositories),
       floatingActionButton: FloatingActionButton(
         onPressed: () => ref.read(repositoryNotifierProvider.notifier).refreshRepositories(),
         tooltip: HardCodedData.refresh,
@@ -48,7 +48,7 @@ class HomePage extends ConsumerWidget {
     );
   }
 
-  Widget _buildBody(
+  Widget _homePageBody(
       BuildContext context,
       WidgetRef ref,
       RepositoryState state,
