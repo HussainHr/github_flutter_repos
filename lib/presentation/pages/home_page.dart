@@ -42,8 +42,7 @@ class HomePage extends ConsumerWidget {
       ),
       body: _buildBody(context, ref, repositoryState, sortedRepositories),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => ref.read(repositoryNotifierProvider.notifier)
-            .refreshRepositories(),
+        onPressed: () => ref.read(repositoryNotifierProvider.notifier).refreshRepositories(),
         tooltip: 'Refresh',
         child: const Icon(Icons.refresh),
       ),
@@ -87,8 +86,7 @@ class HomePage extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
               ElevatedButton(
-                onPressed: () => ref.read(repositoryNotifierProvider.notifier)
-                    .refreshRepositories(),
+                onPressed: () => ref.read(repositoryNotifierProvider.notifier).refreshRepositories(),
                 child: const Text('Retry'),
               ),
             ],
@@ -118,8 +116,7 @@ class HomePage extends ConsumerWidget {
     }
 
     return RefreshIndicator(
-      onRefresh: () => ref.read(repositoryNotifierProvider.notifier)
-          .refreshRepositories(),
+      onRefresh: () => ref.read(repositoryNotifierProvider.notifier).refreshRepositories(),
       child: Column(
         children: [
           if (state.error != null)

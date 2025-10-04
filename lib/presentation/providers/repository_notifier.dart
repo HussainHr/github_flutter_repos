@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/legacy.dart';
-import '../../data/repositories/repository_repository.dart';
-import '../../domain/models/repository_model.dart';
+import 'package:github_flutter_repos/data/repositories/repository_repository.dart';
+import 'package:github_flutter_repos/domain/models/repository_model.dart';
 
 @immutable
 class RepositoryState {

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import '../../core/config/app_config.dart';
-import '../../core/constants/app_constants.dart';
-import '../../domain/models/repository_model.dart';
+import 'package:github_flutter_repos/core/config/app_config.dart';
+import 'package:github_flutter_repos/core/constants/app_constants.dart';
+import 'package:github_flutter_repos/domain/models/repository_model.dart';
 
 class GitHubApiService {
   late final Dio _dio;

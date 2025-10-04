@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import '../../domain/models/repository_model.dart';
+import 'package:github_flutter_repos/domain/models/repository_model.dart';
 
 class RepositoryListItem extends StatelessWidget {
   final Repository repository;
