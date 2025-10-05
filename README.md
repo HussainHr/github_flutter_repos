@@ -46,14 +46,14 @@ dio: ^5.9.0 - HTTP client for API calls
 * Android Studio / VS Code with Flutter extensions
 
 ### 🚀 Installation & Setup
-1. Clone the Repository
+* Clone the Repository
    bash
    git clone https://github.com/HussainHr/github_flutter_repos.git
    cd github-flutter-repos
-2. Install Dependencies
+* Install Dependencies
    bash
    flutter pub get
-3. Create Environment Files
+* Create Environment Files
    Create .env.dev file in the root directory:
    envBASE_URL=https://api.github.com
    API_TIMEOUT=30000
@@ -62,11 +62,11 @@ dio: ^5.9.0 - HTTP client for API calls
    envBASE_URL=https://api.github.com
    API_TIMEOUT=30000
    DEBUG_MODE=false
-4. Generate JSON Serialization Code
+* Generate JSON Serialization Code
    bash
    dart run build_runner build --delete-conflicting-outputs
       This generates the repository_model.g.dart file needed for JSON parsing.
-5. Run the Application
+* Run the Application
    For Development:
    bash
    flutter run --dart-define=ENV=dev
@@ -81,18 +81,18 @@ dio: ^5.9.0 - HTTP client for API calls
      iOS
      bash
      flutter build ios --dart-define=ENV=prod --release
-    🎯 How It Works
 
-First Launch: App fetches top 50 Flutter repos from GitHub API and saves to local database
-Subsequent Launches: App loads data from local database instantly (works offline)
-Pull to Refresh: Fetches latest data and updates the database
-Sorting: Toggle between sorting by stars or last updated (preference saved locally)
-Theme: Switch between light and dark themes (preference saved locally)
+## 🎯 How It Works
+* First Launch: App fetches top 50 Flutter repos from GitHub API and saves to local database
+* Subsequent Launches: App loads data from local database instantly (works offline)
+* Pull to Refresh: Fetches latest data and updates the database
+* Sorting: Toggle between sorting by stars or last updated (preference saved locally)
+* Theme: Switch between light and dark themes (preference saved locally)
 
 ## 📖 Usage
     
-View Repositories: Scroll through the list of 50 repositories
-Sort: Tap the sort icon to change sorting (Stars/Last Updated)
-Toggle Theme: Tap the theme icon to switch between light and dark modes
-View Details: Tap any repository to see detailed information
-Refresh: Pull down on the list to fetch latest data
+* View Repositories: Scroll through the list of 50 repositories
+* Sort: Tap the sort icon to change sorting (Stars/Last Updated)
+* Toggle Theme: Tap the theme icon to switch between light and dark modes
+* View Details: Tap any repository to see detailed information
+* Refresh: Pull down on the list to fetch latest data
