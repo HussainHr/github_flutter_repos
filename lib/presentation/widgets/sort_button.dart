@@ -19,7 +19,7 @@ class CustomShortButton extends ConsumerWidget {
 
     return PopupMenuButton<SortOption>(
       icon: Icon(
-        sortState.isAscending ? Icons.arrow_upward : Icons.arrow_downward,
+        sortState.isAscending ? Icons.filter_list_alt : Icons.filter_list_alt,
       ),
       tooltip: HardCodedData.sortRepository,
       onSelected: onSortChanged,
