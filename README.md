@@ -6,13 +6,13 @@ This app fetches and displays popular Flutter repositories from GitHub. It works
 
 ## ✨ Key Features
 
--View top 50 Flutter repositories from GitHub
--Sort by star count or last updated date
--Offline support with SQLite database
--Dark and Light theme toggle
--Pull-to-refresh functionality
--Clean Material Design 3 UI
--Repository detail page with stats
+* -View top 50 Flutter repositories from GitHub
+* -Sort by star count or last updated date
+* -Offline support with SQLite database
+* -Dark and Light theme toggle
+* -Pull-to-refresh functionality
+* -Clean Material Design 3 UI
+* -Repository detail page with stats
 
 ## 🛠️ Technologies & Packages Used
 ### State Management:
@@ -22,28 +22,28 @@ flutter_riverpod: ^3.0.0 - State management solution
 dio: ^5.9.0 - HTTP client for API calls
 
 ### Local Storage:-
-sqflite: ^2.4.2 - SQLite database for offline storage
-shared_preferences: ^2.5.3 - Save user preferences (theme, sort)
+* sqflite: ^2.4.2 - SQLite database for offline storage
+* shared_preferences: ^2.5.3 - Save user preferences (theme, sort)
 
 ### Code Generation:-
-json_serializable: ^6.7.1 - JSON serialization
-build_runner: ^2.4.7 - Code generator
+* json_serializable: ^6.7.1 - JSON serialization
+* build_runner: ^2.4.7 - Code generator
 
 ### UI & Utilities:-
-cached_network_image: ^3.4.1 - Image caching
-intl: ^0.20.2 - Date formatting
-flutter_dotenv: ^6.0.0 - Environment configuration
+* cached_network_image: ^3.4.1 - Image caching
+* intl: ^0.20.2 - Date formatting
+* flutter_dotenv: ^6.0.0 - Environment configuration
 
 ### Architecture:-
-Clean Architecture (Core, Data, Domain, Presentation layers)
-Repository Pattern for data management
-StateNotifier Pattern for state management
+* Clean Architecture (Core, Data, Domain, Presentation layers)
+* Repository Pattern for data management
+* StateNotifier Pattern for state management
 
 ## 📋 Prerequisites
 
-Flutter SDK 3.35.2 or higher
-Dart SDK 3.9.0 or higher
-Android Studio / VS Code with Flutter extensions
+* Flutter SDK 3.35.2 or higher
+* Dart SDK 3.9.0 or higher
+* Android Studio / VS Code with Flutter extensions
 
 ### 🚀 Installation & Setup
 1. Clone the Repository
